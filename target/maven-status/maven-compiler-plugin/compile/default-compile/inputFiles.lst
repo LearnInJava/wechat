@@ -1,0 +1,14 @@
+D:\Users\44022414\wechat\src\main\java\wechat\WechatApplication.java
+D:\Users\44022414\wechat\src\main\java\wechat\service\CoreService.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\resp\NewsMessage.java
+D:\Users\44022414\wechat\src\main\java\wechat\exception\AesException.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\req\ImageMessage.java
+D:\Users\44022414\wechat\src\main\java\wechat\util\WechatUtil.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\req\TextMessage.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\resp\TextMessage.java
+D:\Users\44022414\wechat\src\main\java\wechat\util\MessageUtil.java
+D:\Users\44022414\wechat\src\main\java\wechat\util\MyX509TrustManager.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\req\BaseMessage.java
+D:\Users\44022414\wechat\src\main\java\wechat\WechatiController.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\resp\Article.java
+D:\Users\44022414\wechat\src\main\java\wechat\message\resp\BaseMessage.java
