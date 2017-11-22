@@ -70,12 +70,12 @@ public class WechatUtil {
 	        CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslf).build();
 	        
 	        //https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN
-	        String accessToken = "m0gHTkEPNojrdtV2y1kTPuTBT-mV6A5hSV81UwSNNnUVKsgjSmSCSyajGpM1P54odF9XoXHGR9mH8kG_1tkGcONeo9hr84GzkgULtLL9bK-SPx24pdBoND8nlQkANEKYCKPjAEAWEJ";
+	        String accessToken = Accesstoken.getAccesstokenFromProp();
 	        String url = "https://api.weixin.qq.com/cgi-bin/media/uploadnews?access_token=ACCESS_TOKEN".replace("ACCESS_TOKEN", accessToken);
 	        HttpPost httpPost = new HttpPost(url);
 	        
 	        JSONObject object = new JSONObject();
-	        object.put("thumb_media_id", "tN6wacy8pcg5I_Xt6-WG_rh8FWfFdFjUxl9UAJO-Mgk6JCNjHfFhUrXHh8iSxT8D");
+	        object.put("thumb_media_id", "Z0enwAP_yFYc4Jk7iBy6TVF4i1Oxh5tguCgX9njzUZQ9p0PPE8VoKe2dxdlOxDTT");
 	        object.put("author", "sunday");
 	        object.put("title", "sunday is become better");
 	        object.put("content_source_url", "www.qq.com");
@@ -123,22 +123,22 @@ public class WechatUtil {
 	        CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslf).build();
 	        
 	        //https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN
-	        String accessToken = "FdJnOkEtXoXrgwEx-UfZH_Oi38L6y9E0e0Uzof2rWmEVf6SvW41b_jJ3RJqA62PLJJ7sTZtWqvwBWP0zxtXA4_6caWyg6YDYcYw1YHvFGxPSwIaJYqysCGR4PCKNo_K6FEOiACAVUE";
+	        String accessToken = Accesstoken.getAccesstokenFromProp();
 	        String url = "https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token=ACCESS_TOKEN".replace("ACCESS_TOKEN", accessToken);
 	        HttpPost httpPost = new HttpPost(url);
 	        
 	        JSONObject filter = new JSONObject();
 	        filter.put("is_to_all", true);
 	        filter.put("tag_id", 1);
-	        JSONObject text = new JSONObject();
-	        text.put("content", "Today is  national day , coding is the good idea ");
+	        JSONObject mpnews = new JSONObject();
+	        mpnews.put("media_id", "WiVBmLH9iIsN-RHHPmC9hza13GsIcDVFnNtuxOfq4Ec_KkUG34ag0Nw70QgdyTJp");
 	        
 	        JSONObject root = new JSONObject();
 	        root.put("filter", filter);
-	        root.put("text", text);
+	        root.put("mpnews", mpnews);
 	     
-	        root.put("msgtype", "text");
-	    
+	        root.put("msgtype", "mpnews");
+	        root.put("send_ignore_reprint", 0);
 	        
 	        StringEntity stringEntity = new StringEntity(root.toString());
 	        httpPost.setEntity(stringEntity);
@@ -167,11 +167,10 @@ public class WechatUtil {
 			
 			 // 从上述SSLContext对象中得到SSLSocketFactory对象  
 	        SSLConnectionSocketFactory  sslf = new SSLConnectionSocketFactory(sslContext);
-	        
 	        CloseableHttpClient httpClient = HttpClients.custom().setSSLSocketFactory(sslf).build();
 	        
 	        //https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN
-	        String accessToken = "CZ_0y2UVwNmB7AvpHCSK3AD3dxU0GXekGZv2CGuoyXSNFQrJfFvIj0hT96TBIzq7OkK84lOZYxaQajO_LNR2PjQsWYlIyy22IaC4P5QiyOxs64SO9favBSdKKJT1aip1GLKeAJAQVU";
+	        String accessToken = Accesstoken.getAccesstokenFromProp();
 	        String url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN".replace("ACCESS_TOKEN", accessToken);
 	        HttpPost httpPost = new HttpPost(url);
 	        
@@ -180,11 +179,11 @@ public class WechatUtil {
 	        f.put("color", "#173177");
 	        
 	        JSONObject product = new JSONObject();
-	        product.put("value", "韩版西服");
+	        product.put("value", "万达院线");
 	        product.put("color", "#173177");
 	        
 	        JSONObject price = new JSONObject();
-	        price.put("value", "149元");
+	        price.put("value", "666元");
 	        price.put("color", "#173177");
 
 	        JSONObject time = new JSONObject();
@@ -228,6 +227,8 @@ public class WechatUtil {
 	
 	
 	public static void main(String[] args) {
-		sendTemplateMsg();
+		//sendTemplateMsg();
+		//uploadNews();
+		sendMsg();
 	}
 }
